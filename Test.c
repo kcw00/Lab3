@@ -8,6 +8,8 @@ void decrypt(char* str, char key) {
 	// decrypts str with a given key
 	int length = strlen(str);
 	for (int i = 0; i < length; i++ ) { // make a loop for decryption
+	// use strlen -> twice for loop
+	 // for (int i =0; str[i] != '\0'; i++) is better.
 		str[i] = str[i] ^ key;
 	}
 }
@@ -32,7 +34,22 @@ void test(char* str1, char* str2) {
 			printf("Decrypted code with the key '%c': %s\n", key, tempStr);
 		}
 	}
-}
+
+	//feedback
+	// void test(char* str1, char* str2) {
+// 		for (char i = 'A'; i <= 'Z'; i++) {
+// 			decrypt(str2, i);
+// 			if (strcmp(str1, tempStr) == 0) {
+// 				printf("Cracked the code! The encryption key is '%c'\n", i);
+// 				return;
+// 			}
+// 			else {
+// 				printf("Decrypted code with the key '%c': %s\n", i, str2);
+// 			}
+//			decrypt(str2, i);
+// 		}
+// 	}
+// }
 
 int main(int argc, char** argv) {
 	test(argv[1], argv[2]);

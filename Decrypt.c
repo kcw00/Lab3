@@ -7,6 +7,7 @@ void decrypt(char* str, char key) {
 	// decrypts str with a given key
 	int length = strlen(str);
 	for (int i = 0; i < length; i++) { // make a loop for decryption
+	// another answer could be: for (int i = 0; str[i] != '\0'; i++)
 		str[i] = str[i] ^ key;
 	}
 }
