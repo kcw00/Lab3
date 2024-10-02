@@ -5,7 +5,7 @@ void decrypt(char* str, char key) {
 	// str = encrypted version
 	// key 
 	// decrypts str with a given key
-	int length = strlen(str);
+	int length = strlen(str); // feedback: strlen() is a very expensive function to call (O(n)). It is not necessary here because you can terminate the loop by using a condition like str[i] != '\0';
 	for (int i = 0; i < length; i++) { // make a loop for decryption
 	// another answer could be: for (int i = 0; str[i] != '\0'; i++)
 		str[i] = str[i] ^ key;
